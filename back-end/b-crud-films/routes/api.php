@@ -10,4 +10,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('/films', [FilmController::class, 'index']);
+Route::get('/films', [FilmController::class, 'index']); // Listar todas las peliculas
+Route::get('/films/{id}', [FilmController::class, 'show']); // Listar pelicula por id

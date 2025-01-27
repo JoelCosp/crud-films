@@ -34,9 +34,10 @@ class FilmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Film $film)
+    public function show($id)
     {
-        //
+        $film = Film::find($id);
+        return response()->json($film);
     }
 
     /**
