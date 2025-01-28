@@ -1,0 +1,9 @@
+<!-- Usamos *ngFor para recorrer cada item en el array -->
+<div *ngFor="let item of items">
+    <div class="flex">
+        <img [src]="item.img_url" alt="item.title">
+        <p>{{ item.title }}</p>
+    </div>
+    <p>{{ item.description }}</p>
+  </div>
+  
