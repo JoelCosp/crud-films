@@ -59,8 +59,18 @@ class FilmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Film $film)
+    public function destroy($id)
     {
-        //
+        $film = Film::where('id', $id)->first(); // o Film::find($id);
+        if($film) 
+        {
+            $film->delete();
+            return response()->json([
+                'message' => 'Pelicula eliminada'
+            ]);
+        }
+        return response()->json([
+            'message' => 'Pelicula no encontrada'
+        ], 404);
     }
 }

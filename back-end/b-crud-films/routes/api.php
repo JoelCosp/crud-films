@@ -12,3 +12,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/films', [FilmController::class, 'index']); // Listar todas las peliculas
 Route::get('/films/{id}', [FilmController::class, 'show']); // Listar pelicula por id
+Route::delete('/films/{id}', [FilmController::class, 'destroy']); // Listar pelicula por id
